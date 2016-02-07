@@ -1,0 +1,11 @@
+
+.clover
+*/.clover
+
+*.class
+*.iws
+*.log
+target
+release
+*.swp
+.DS_*
