@@ -11,7 +11,7 @@ public class Watcher {
   public static void main(String[] args)
       throws InterruptedException {
 
-    final Firebase ref = new Firebase("https://amber-inferno-8982.firebaseio.com/");
+    final Firebase ref = new Firebase(Constants.FB_URL);
 
     final ValueEventListener valueEventListener =
         new ValueEventListener() {

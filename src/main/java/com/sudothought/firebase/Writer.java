@@ -6,10 +6,11 @@ import com.firebase.client.FirebaseError;
 import java.util.concurrent.CountDownLatch;
 
 public class Writer {
+
   public static void main(String[] args)
       throws InterruptedException {
 
-    final Firebase fd = new Firebase("https://amber-inferno-8982.firebaseio.com/");
+    final Firebase fd = new Firebase(Constants.FB_URL);
 
     for (int i = 0; i < 100; i++) {
 
