@@ -58,6 +58,8 @@ public class Watcher {
     ref.child("node1").addChildEventListener(childEventListener);
     ref.child("node2").addValueEventListener(valueEventListener);
     ref.child("node2").addChildEventListener(childEventListener);
+    ref.child("node3").addValueEventListener(valueEventListener);
+    ref.child("node3").addChildEventListener(childEventListener);
 
     Thread.sleep(100_000_000);
   }
