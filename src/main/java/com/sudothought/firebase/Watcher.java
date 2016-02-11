@@ -11,7 +11,7 @@ public class Watcher {
   public static void main(String[] args)
       throws InterruptedException {
 
-    final Firebase ref = new Firebase(Constants.FB_URL);
+    final Firebase fb = new Firebase(Constants.FB_URL);
 
     final ValueEventListener valueEventListener =
         new ValueEventListener() {
@@ -54,12 +54,12 @@ public class Watcher {
           }
         };
 
-    ref.child("node1").addValueEventListener(valueEventListener);
-    ref.child("node1").addChildEventListener(childEventListener);
-    ref.child("node2").addValueEventListener(valueEventListener);
-    ref.child("node2").addChildEventListener(childEventListener);
-    ref.child("node3").addValueEventListener(valueEventListener);
-    ref.child("node3").addChildEventListener(childEventListener);
+    fb.child("node1").addValueEventListener(valueEventListener);
+    fb.child("node1").addChildEventListener(childEventListener);
+    fb.child("node2").addValueEventListener(valueEventListener);
+    fb.child("node2").addChildEventListener(childEventListener);
+    fb.child("node3").addValueEventListener(valueEventListener);
+    fb.child("node3").addChildEventListener(childEventListener);
 
     Thread.sleep(100_000_000);
   }

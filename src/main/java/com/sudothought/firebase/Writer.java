@@ -10,7 +10,7 @@ public class Writer {
   public static void main(String[] args)
       throws InterruptedException {
 
-    final Firebase fd = new Firebase(Constants.FB_URL);
+    final Firebase fb = new Firebase(Constants.FB_URL);
 
     for (int i = 0; i < 100; i++) {
 
@@ -28,13 +28,13 @@ public class Writer {
             }
           };
 
-      fd.child("node1")
+      fb.child("node1")
         .setValue("The current time: " + System.currentTimeMillis(), listener);
 
-      fd.child("node2")
+      fb.child("node2")
         .setValue(new Person("Bob", "Sacamano"), listener);
 
-      fd.child("node3")
+      fb.child("node3")
         .setValue("This is a static value", listener);
 
       latch.await();

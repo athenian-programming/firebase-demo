@@ -7,9 +7,9 @@ public class Reset {
   public static void main(String[] args)
       throws InterruptedException {
 
-    final Firebase fd = new Firebase(Constants.FB_URL);
+    final Firebase fb = new Firebase(Constants.FB_URL);
 
-    fd.setValue(null);
+    fb.setValue(null);
 
     Thread.sleep(3_000);
   }
