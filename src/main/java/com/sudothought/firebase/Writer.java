@@ -1,7 +1,6 @@
 package com.sudothought.firebase;
 
 import com.firebase.client.Firebase;
-import com.firebase.client.FirebaseError;
 
 import java.util.concurrent.CountDownLatch;
 
@@ -17,15 +16,12 @@ public class Writer {
       final CountDownLatch latch = new CountDownLatch(3);
 
       final Firebase.CompletionListener listener =
-          new Firebase.CompletionListener() {
-            public void onComplete(final FirebaseError error, final Firebase firebase) {
-              final String msg = error != null
-                                 ? String.format("Data not saved: %s", error.getMessage())
-                                 : "Data saved.";
-              System.out.println(msg);
-
-              latch.countDown();
-            }
+          (error, firebase) -> {
+            final String msg = error != null
+                               ? String.format("Data not saved: %s", error.getMessage())
+                               : "Data saved.";
+            System.out.println(msg);
+            latch.countDown();
           };
 
       fb.child("node1")
